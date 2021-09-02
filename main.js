@@ -17,7 +17,7 @@
     ].map(v => `https://${sqhfo4}.github.io/mylib/export/${v}.mjs`));
     const __ = await importAll([
         'resize'
-    ].map(v => `https://hrjs.github.io/mylib/export/${v}.mjs`));
+    ].map(v => `https://hrjs.github.io/a/mjs/${v}.mjs`));
     const tabA = $('<div>'),
           tabB = $('<div>').text('output');
     __.addTab(foot,{
