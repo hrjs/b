@@ -28,6 +28,7 @@
         }
     });
     const input = _.addInputStr(tabA,{
+        textarea: true,
         label: 'input'
     });
     __.resize(input.elm);
@@ -38,10 +39,10 @@
         if(judge(str.replace(reg,''))) return;
         const result = str.split('\n').map(line => line.split('').map(c => reg.test(c) ? '45' : dict[c]).join(' ')).join('\n');
         _.addInputStr(tabB.empty(),{
+            textarea: true,
             label: 'output',
             value: result,
-            copy: true,
-            textarea: true
+            copy: true
         });
     });
     const dict = (await Promise.all([
