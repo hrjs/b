@@ -53,7 +53,10 @@
         'greek',
         'tenji',
     ].map(v => fetch(`dict/${v}.txt`).then(v => v.text())))).reduce((p, x) => {
-        for(const line of x.split('\n').filter(v => v)) for(const [k, v] of line.split(' ')) p[k] = v;
+        for(const line of x.split('\n').filter(v => v)) {
+            const [k, v] = line.split(' ');
+            p[k] = v;
+        }
         return p;
     }, {});
     const judge = str => {
