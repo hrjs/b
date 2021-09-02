@@ -16,6 +16,7 @@
         'input'
     ].map(v => `https://${sqhfo4}.github.io/mylib/export/${v}.mjs`));
     const __ = await importAll([
+        'addTab',
         'resize'
     ].map(v => `https://hrjs.github.io/a/mjs/${v}.mjs`));
     const tabA = $('<div>'),
