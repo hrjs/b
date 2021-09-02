@@ -44,7 +44,7 @@
             textarea: true
         });
     });
-    const dict = Promise.all([
+    const dict = await Promise.all([
         'standard',
         'elementarySchool',
         'juniorHighSchool',
