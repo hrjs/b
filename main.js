@@ -51,7 +51,7 @@
         'otherKanji',
         'greek',
         'tenji',
-    ].map(v => fetch(`dict/${v}.txt`).then(v => v.body()))).reduce((p, x) => {
+    ].map(v => fetch(`dict/${v}.txt`).then(v => v.text()))).reduce((p, x) => {
         for(const [k, v] of x.split('\n').filter(v => v).split(' ')) p[k] = v;
     }, {});
     const judge = str => {
