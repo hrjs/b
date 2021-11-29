@@ -13,7 +13,8 @@
           body = $('<div>').appendTo(html),
           foot = $('<div>').appendTo(html);
     const _ = await importAll([
-        'input'
+        'input',
+        'hankaku'
     ].map(v => `https://${sqhfo4}.github.io/mylib/export/${v}.mjs`));
     const __ = await importAll([
         'addTab',
@@ -35,7 +36,7 @@
     const addBtn = (ttl, func) => $('<button>').appendTo(body).text(ttl).on('click', func);
     const reg = /[\n\r\s　]/g;
     addBtn('translate', () => {
-        const str = input();
+        const str = _.toHan(input());
         if(judge(str.replace(reg,''))) return;
         const result = str.split('\n').map(line => line.split('').map(c => reg.test(c) ? '45' : dict[c]).join(' ')).join('\n');
         _.addInputStr(tabB.empty(),{
